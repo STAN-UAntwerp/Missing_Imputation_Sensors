@@ -50,24 +50,15 @@ def MRNN_imputation(df_missings,df_ground_truth,**kwargs):
   h_dim = kwargs.get('h_dim', 10)
   seq_len = kwargs.get('seq_len', 10)
   learning_rate = kwargs.get('learning_rate', 0.01)
-  
-  ## Load data
   x,m,t,scaler_ms =  obtain_data(df_missings,seq_len)
-
-  ## Train M-RNN
-  # Remove 'tmp/mrnn_imputation' directory if exist
   if os.path.exists('tmp/mrnn_imputation'):
     shutil.rmtree('tmp/mrnn_imputation')
-  
-  # mrnn model parameters
   model_parameters = {'h_dim': h_dim,
                       'batch_size': batch_size,
                       'iteration': iteration, 
                       'learning_rate': learning_rate}  
-  # Fit mrnn_model
   mrnn_model = mrnn(x, model_parameters)
   mrnn_model.fit(x, m, t)
-
   imputed_x = mrnn_model.transform(x, m, t)
   imputed_array = np.asarray(imputed_x,dtype=object).astype('float32')
   imputed = make_final_prediction(imputed_array)

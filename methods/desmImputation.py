@@ -52,13 +52,7 @@ def DESM_imputer(df_missings,df_ground_truth,distance_metric="haversine"):
         sensor['new_target'] = sensor.apply(replace_nan_target, axis=1)
         return sensor
 
-    #Read in the distances instead of calculations to make the imputation faster
     unique_comb = df_missings[['latitude', 'longitude']].drop_duplicates()
-    #if distance_metric == 'file':
-    #    df_distances = read_in_distances()
-    #elif distance_metric == 'euclidean':
-    #    df_distances = pd.read_csv('./data/CN_daily_Final/sensor_distances_eu.csv', index_col=0)
-    #else:
     df_distances = pd.read_csv('./data/CN_daily_Final/sensor_distances_hv.csv', index_col=0)
     df_sensor_ids = pd.read_csv('./data/CN_daily_Final/sensor_ids.csv', index_col=0)
     df_sensor_ids = df_sensor_ids[df_sensor_ids['longitude'].isin(unique_comb['longitude'])]

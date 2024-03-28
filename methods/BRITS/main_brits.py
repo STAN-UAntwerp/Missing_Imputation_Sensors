@@ -24,8 +24,6 @@ def BRITS_imputation(df_missings,df_ground_truth,**kwargs):
     h_dim = kwargs.get('h_dim', 10)
     timesteps = kwargs.get('timesteps', 20)
     learning_rate = kwargs.get('learning_rate', 0.01)
-
-    # Transform the data
     pivot_df_ms = df_missings.pivot(index='time', columns=['longitude', 'latitude'], values='target')
     pivot_df_gt = df_ground_truth.pivot(index='time', columns=['longitude', 'latitude'], values='target')
     pivot_df_ms = pivot_df_ms.droplevel(level='latitude', axis=1).reset_index(drop=True)
@@ -34,15 +32,9 @@ def BRITS_imputation(df_missings,df_ground_truth,**kwargs):
     pivot_df_gt.columns = [str(col) for col in pivot_df_gt.columns]
     x = pivot_df_gt.to_numpy()
     xm = pivot_df_ms.to_numpy()
-
-    # Fit the model
     model = BRITS(x=x,units=h_dim,timesteps=timesteps)
     model.fit(learning_rate=learning_rate,batch_size=batch_size,epochs=epochs,verbose=False)
-
-    # Run it on the missings 
     x_hat = model.impute(x=xm)
-
-    # Output to correct format
     imputed_df = pd.DataFrame(x_hat)
     pivot_df_ms = df_missings.pivot(index='time', columns=['longitude', 'latitude'], values='target')
     imputed_df.columns = pivot_df_ms.columns

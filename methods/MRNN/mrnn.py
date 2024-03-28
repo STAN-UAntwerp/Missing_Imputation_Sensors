@@ -61,7 +61,6 @@ class mrnn ():
      
     with tf.compat.v1.Session() as sess:        
         
-      # input place holders
       target = tf.compat.v1.placeholder(tf.float32, [self.seq_len, None, 1])
       mask = tf.compat.v1.placeholder(tf.float32, [self.seq_len, None, 1])
                 

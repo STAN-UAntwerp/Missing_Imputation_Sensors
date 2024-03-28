@@ -68,36 +68,6 @@ def initial_point_interpolation (x, m, t, imputed_x):
           else:
             imputed_x[i, j, k] = x[i, np.min(idx), k]       
   return imputed_x
-
-# def initial_point_interpolation (x, m, t, imputed_x):
-#   """Initial point interpolation.
-
-#   If the variable at time point 0 is missing, do zero-hold interpolation.
-  
-#   Args:
-#     - x: original features
-#     - m: masking matrix
-#     - t: time information
-#     - imputed_x: imputed data
-    
-#   Returns:
-#     - imputed_x: imputed and interpolated data
-#   """  
-  
-#   no, seq_len, dim = x.shape
-  
-#   for i in range(no):
-#     for k in range(dim):
-#       for j in range(seq_len):
-#         # If there is no previous measurements
-#         if (t[i,j,k] > j):
-#           idx = np.where(m[i,:,k]==1)[0]
-#           # Do zero-hold interpolation
-#           imputed_x[i,j,k] = x[i,np.min(idx),k]
-                    
-#   return imputed_x
-
-
   
 class biGRUCell(object):
   """Bi-directional GRU cell object.
