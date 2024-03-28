@@ -2,7 +2,7 @@
 
 ### Authors: Thomas Decorte, Steven Mortier, Jonas J. Lembrechts, Filip J. R. Meysman, Steven Latré, Erik Mannens, and Tim Verdonck
 
-## Introduction
+## Abstract
 Over the past few years, the scale of sensor networks has greatly expanded. This generates 1
 extended spatio-temporal datasets, which form a crucial information resource in numerous fields, 2
 ranging from sports and healthcare to environmental science and surveillance. Unfortunately, these 3
@@ -23,9 +23,10 @@ provide a tool to maximize the benefit from costly, large-scale environmental mo
 
 For more information see: INSERT PAPER URL
 
-## Dependencies
+## Dependencies & Code
 
-The models were implemented in Python 3.11. The following packages are needed for running the code:
+The code contains the preprocessing steps of the data as well as the various methods applied in the paper alongside the general setup and hyperparemeter tuning leveraged. 
+The code was implemented in Python 3.11. The following packages are needed for running the code:
 - numpy==1.23.3
 - pandas==1.5.0
 - scikit-learn==1.1.2
@@ -34,4 +35,11 @@ The models were implemented in Python 3.11. The following packages are needed fo
 - statsmodels==0.13.2
 
 ## Datasets
-The datasets showcased in the paper are made available on the SoilTemp project (https://www.soiltempproject.com/) of the University of Antwerp
+The datasets showcased in the paper are made available on the SoilTemp project (https://www.soiltempproject.com/) of the University of Antwerp.
+
+## Example usage
+
+To execute an example of the procedure based on the above dataset run the following line:
+```
+ python allmethods.py
+```
