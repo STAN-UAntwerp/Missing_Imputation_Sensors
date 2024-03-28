@@ -21,21 +21,14 @@ if __name__ == '__main__':
     results_df = pd.DataFrame(columns=['Missings','Method', 'RMSE', 'MAE', 'PCE','Execution time'])  
 
     # Run all methods 
-    #results_df_out = data_run(results_df,'masked',True,False,True)
+    results_df_out = data_run(results_df,'masked',True,False,True)
 
-    #for missing_perc in [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]:
-    #    results_df_out_ms = data_run(results_df,str(missing_perc),True,True,True)
-    #    results_df_out= pd.concat([results_df_out,results_df_out_ms])
+    for missing_perc in [0.1,0.2,0.3,0.4,0.5]:
+        results_df_out_ms = data_run(results_df,str(missing_perc),True,True,True)
+        results_df_out= pd.concat([results_df_out,results_df_out_ms])
 
-    #results_df_out.to_csv('results/CN_daily_Final/ALL_CN_daily_results.csv', index=False)    
-    #results_df = pd.read_csv('results/CN_daily_Final/ALL_CN_daily_results.csv')
-    
-    results_df_out_2 = data_run(results_df,'masked',True,False,False)
-    results_df_out= pd.concat([results_df,results_df_out_2])
-
-    #results_df_out.to_csv('results/CN_daily_Final/ALL_CN_daily_results.csv', index=False)
-
-    #results_df_out = pd.read_csv('results/CN_daily_Final/ALL_CN_daily_results.csv')
+    results_df_out_masked = data_run(results_df,'masked',True,False,False)
+    results_df_out= pd.concat([results_df_out,results_df_out_masked])
     
     for missing_perc in [0.1,0.2,0.3,0.4,0.5]:
         results_df_out_ms = data_run(results_df_out,str(missing_perc),True,True,False)

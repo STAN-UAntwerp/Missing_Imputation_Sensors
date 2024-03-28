@@ -44,11 +44,11 @@ with open('utils/hyperparam_values.json', 'r') as file:
     hyperparam_data = json.load(file)
 
 for method in [
-    #'KNN imputation',
-    #'MICE imputation', 
-    #'AKE imputation',
-    #'MIDA imputation',
-    #'BRITS imputation',
+    'KNN imputation',
+    'MICE imputation', 
+    'AKE imputation',
+    'MIDA imputation',
+    'BRITS imputation',
     'MRNN imputation'
     ]:
     

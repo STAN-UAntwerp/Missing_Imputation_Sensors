@@ -56,5 +56,5 @@ def main(daily=True,relative=True):
 if __name__ == "__main__":
     print("Per day")
     main(daily=True,relative=False)
-    #print("Per quarter")
-    #main(daily=False,relative=False)
+    print("Per quarter")
+    main(daily=False,relative=False)
