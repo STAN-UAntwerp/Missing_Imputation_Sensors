@@ -1,0 +1,38 @@
+{
+    "Mean imputation":{},
+    "Mean imputation no pivot":{},
+    "Spline imputation":{},
+    "Cubic spline imputation":{},
+    "DESM imputation":{},
+    "MC/MF imputation":{},
+    "MC/MF imputation scaled":{},
+    "MissForest imputation":{},
+    "MCMC imputation":{},
+    "MICE imputation":{
+        "n_nearest_features": [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+    },
+    "KNN imputation":
+    {
+        "n_neighbors": [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+    },
+    "AKE imputation":
+    {
+        "k": [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+    },
+    "MIDA imputation":
+    {
+        "theta": [5,6,7,8,9]
+    },
+    "BRITS imputation":
+    {
+        "timesteps": [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+        "h_dim": [5,6,7,8,9,10,11,12,13,14,15],
+        "learning_rate": [0.0001,0.001,0.01,0.1]
+    },
+    "MRNN imputation":
+    {
+        "seq_len": [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+        "h_dim": [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],
+        "learning_rate": [0.0001,0.001,0.01,0.1]
+    }
+}
