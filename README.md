@@ -23,16 +23,9 @@ provide a tool to maximize the benefit from costly, large-scale environmental mo
 
 For more information see: INSERT PAPER URL
 
-## Dependencies & Code
+## Code
 
-The code contains the preprocessing steps of the data as well as the various methods applied in the paper alongside the general setup and hyperparemeter tuning leveraged. 
-The code was implemented in Python 3.11. The following packages are needed for running the code:
-- numpy==1.23.3
-- pandas==1.5.0
-- scikit-learn==1.1.2
-- scipy==1.9.1
-- sklearn==0.0
-- statsmodels==0.13.2
+The code contains the preprocessing steps of the data (data cleaning, distance calculation of sensors etc.) as well as the various methods applied in the paper alongside the general setup and hyperparemeter tuning leveraged. The code was implemented in Python 3.11. 
 
 ## Datasets
 The datasets showcased in the paper are made available on the SoilTemp project (https://www.soiltempproject.com/) of the University of Antwerp.
