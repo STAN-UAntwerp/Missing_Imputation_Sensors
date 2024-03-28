@@ -14,16 +14,10 @@ def get_mask_for_metrics(data_with_missing: pd.DataFrame, imputed_data: pd.DataF
     It filters out the values where the data_with_missing is NaN (those that we want to impute),
     and the values where the imputed_data is NaN (those that we were not able to impute).
     """
-
-    # find the indices where the data_with_missing is NaN
     data_with_missing_mask = data_with_missing.isnull()
     data_with_missing_mask_array = data_with_missing_mask.values.flatten()
-
-    # find indices where the imputed_data is not NaN
     imputed_mask = ~imputed_data.isnull()
     imputed_mask_array = imputed_mask.values.flatten()
-
-    # the values that should be compared are the ones where the data_with_missing is NaN and the imputed_data is not NaN
     mask_array = data_with_missing_mask_array & imputed_mask_array
 
     return mask_array

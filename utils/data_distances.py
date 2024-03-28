@@ -27,7 +27,7 @@ def make_sensor_ids_df():
     df_missings = transform_data(df_missings, 'time', target, x_loc, y_loc)
     unique_comb = df_missings[['latitude', 'longitude']].drop_duplicates()
     unique_comb.to_csv('data/CN_daily_Final/sensor_ids.csv', index=True)
-    #unique_comb.to_csv('data/CN_daily/sensor_ids.csv', index=True)
+    unique_comb.to_csv('data/CN_daily/sensor_ids.csv', index=True)
     
                                                          
 if __name__ == "__main__":

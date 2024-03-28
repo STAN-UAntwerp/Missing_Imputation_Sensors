@@ -50,66 +50,66 @@ def run_single_method(fold,missing_perc,plot_name,results_df,
 
 def run_all_methods_off_tf(fold,missing_perc,results_df,dataset_name,df_missings,
                     df_ground_truth,missing_percentage,dataset):
-    # # Mean imputation
-    # method,name_save_results,imputation_function = 'Mean imputation','mean_imputation',mean_imputation
-    # plot_name = 'Mean imputation'
-    # results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
-    #                                dataset_name,missing_percentage,df_ground_truth,
-    #                                imputation_function)
-    # # Spline imputation
-    # method,name_save_results,imputation_function = 'Spline imputation','spline_imputation',apply_spline
-    # plot_name = 'Spline - Kreindler, D. M., & Lumsden, C. J. (2016)'
-    # results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
-    #                                dataset_name,missing_percentage,df_ground_truth,
-    #                                imputation_function)
-    # # DESM imputation
-    # method,name_save_results,imputation_function = 'DESM imputation','desm_imputation',DESM_imputer
-    # plot_name = 'DESM - Gruenwald et al. (2010)'
-    # results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
-    #                                dataset_name,missing_percentage,df_ground_truth,
-    #                                imputation_function)
+    # Mean imputation
+    method,name_save_results,imputation_function = 'Mean imputation','mean_imputation',mean_imputation
+    plot_name = 'Mean imputation'
+    results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
+                                   dataset_name,missing_percentage,df_ground_truth,
+                                   imputation_function)
+    # Spline imputation
+    method,name_save_results,imputation_function = 'Spline imputation','spline_imputation',apply_spline
+    plot_name = 'Spline - Kreindler, D. M., & Lumsden, C. J. (2016)'
+    results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
+                                   dataset_name,missing_percentage,df_ground_truth,
+                                   imputation_function)
+    # DESM imputation
+    method,name_save_results,imputation_function = 'DESM imputation','desm_imputation',DESM_imputer
+    plot_name = 'DESM - Gruenwald et al. (2010)'
+    results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
+                                   dataset_name,missing_percentage,df_ground_truth,
+                                   imputation_function)
     # KNN imputation
     method,name_save_results,imputation_function = 'KNN imputation','knn_imputation',knn_imputer_function
     plot_name = 'KNN'
     results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
                                     dataset_name,missing_percentage,df_ground_truth,
                                     imputation_function)
-    # # MF/Matrix Completion imputation
-    # method,name_save_results,imputation_function = 'MC/MF imputation scaled','MC/MF_imputation_scaled',soft_impute
-    # plot_name = 'MC - Mazumder, R., Hastie, T., & Tibshirani, R. (2010)'
-    # results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
-    #                                 dataset_name,missing_percentage,df_ground_truth,
-    #                                 imputation_function)
-    # # MICE imputation
-    # method,name_save_results,imputation_function = 'MICE imputation','MICE_imputation',mice_imputation
-    # plot_name = 'MICE - White, I. R., Royston, P., & Wood, A. M. (2011)'
-    # results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
-    #                                 dataset_name,missing_percentage,df_ground_truth,
-    #                                 imputation_function)
-    # # AKE imputation
-    # method,name_save_results,imputation_function = 'AKE imputation','AKE_imputation',AKE_imputation
-    # plot_name = 'AKE - Pan, L., & Li, J. (2010)'
-    # results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
-    #                                 dataset_name,missing_percentage,df_ground_truth,
-    #                                 imputation_function, dataset=dataset)
-    # # MissForest imputation
-    # method,name_save_results,imputation_function = 'MissForest imputation','missforest_imputation',missforest_imputation
-    # plot_name = 'MissForest - D. J. Stekhoven and P. Bühlmann (2011)'
-    # results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
-    #                                 dataset_name,missing_percentage,df_ground_truth,
-    #                                 imputation_function)
-    # # MIDA imputation
-    #method,name_save_results,imputation_function = 'MIDA imputation','MIDA_imputation',MIDA_imputation
-    #plot_name = 'MIDA - Gondara, L., & Wang, K. (2018)'
-    #results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
-    #                                 dataset_name,missing_percentage,df_ground_truth,
-    #                                 imputation_function, df_gt=df_ground_truth)   
-    # # MRNN imputation
-    # method,name_save_results,imputation_function = 'MRNN imputation','MRNN_imputation',MRNN_imputation
-    # plot_name = 'MRNN - Yoon, J., Zame, W. R., & van der Schaar, M. (2018)'
-    # results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
-    #                                 dataset_name,missing_percentage,df_ground_truth,
-    #                                 imputation_function,df_gt=df_ground_truth)  
+    # MF/Matrix Completion imputation
+    method,name_save_results,imputation_function = 'MC/MF imputation scaled','MC/MF_imputation_scaled',soft_impute
+    plot_name = 'MC - Mazumder, R., Hastie, T., & Tibshirani, R. (2010)'
+    results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
+                                    dataset_name,missing_percentage,df_ground_truth,
+                                    imputation_function)
+    # MICE imputation
+    method,name_save_results,imputation_function = 'MICE imputation','MICE_imputation',mice_imputation
+    plot_name = 'MICE - White, I. R., Royston, P., & Wood, A. M. (2011)'
+    results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
+                                    dataset_name,missing_percentage,df_ground_truth,
+                                    imputation_function)
+    # AKE imputation
+    method,name_save_results,imputation_function = 'AKE imputation','AKE_imputation',AKE_imputation
+    plot_name = 'AKE - Pan, L., & Li, J. (2010)'
+    results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
+                                    dataset_name,missing_percentage,df_ground_truth,
+                                    imputation_function, dataset=dataset)
+    # MissForest imputation
+    method,name_save_results,imputation_function = 'MissForest imputation','missforest_imputation',missforest_imputation
+    plot_name = 'MissForest - D. J. Stekhoven and P. Bühlmann (2011)'
+    results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
+                                    dataset_name,missing_percentage,df_ground_truth,
+                                    imputation_function)
+    # MIDA imputation
+    method,name_save_results,imputation_function = 'MIDA imputation','MIDA_imputation',MIDA_imputation
+    plot_name = 'MIDA - Gondara, L., & Wang, K. (2018)'
+    results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
+                                     dataset_name,missing_percentage,df_ground_truth,
+                                     imputation_function, df_gt=df_ground_truth)   
+    # MRNN imputation
+    method,name_save_results,imputation_function = 'MRNN imputation','MRNN_imputation',MRNN_imputation
+    plot_name = 'MRNN - Yoon, J., Zame, W. R., & van der Schaar, M. (2018)'
+    results_df = run_single_method(fold,missing_perc,plot_name,results_df,method,df_missings,name_save_results,
+                                    dataset_name,missing_percentage,df_ground_truth,
+                                    imputation_function,df_gt=df_ground_truth)  
     return results_df
 
 

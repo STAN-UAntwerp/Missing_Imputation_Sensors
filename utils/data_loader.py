@@ -67,19 +67,9 @@ def obtain_data(df_missings,seq_len):
         t = t + [temp_t]
     t = np.asarray(t,dtype=object).astype('float32')
     
-    #Drop anchors in training with more than 50% missings
-    #Here we apply masking values instead of the dropping of training variables 
-    #(the dropping is done in IIN)
     shape = x.shape
     x = pd.DataFrame(np.vstack(x))
     x = x.to_numpy()
     x = x.reshape(shape[0], shape[1], shape[2])
-    # for sensor in range(0,x.shape[2]):
-    #     for tijd in range(0,x.shape[0]):
-    #         are_all_nan = np.all(np.isnan(x[tijd,:,sensor]))
-    #         if are_all_nan: 
-    #             arr = x[:tijd,:,sensor].ravel()
-    #             last_not_nan_index = next((i for i, v in enumerate(reversed(arr)) if not np.isnan(v)), None)
-    #             x[tijd,0,sensor] = arr[len(arr) - 1 - last_not_nan_index]
     x = np.nan_to_num(x, nan=0)
     return x,m,t,scaler_ms
