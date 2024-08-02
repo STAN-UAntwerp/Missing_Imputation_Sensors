@@ -1,5 +1,7 @@
 # Missing Value Imputation of Wireless Sensor Data for Environmental Monitoring
 
+This repository contains the code accompanying the publication titled *Missing Value Imputation of Wireless Sensor Data for Environmental Monitoring*. You can find the paper as open access [here](https://www.mdpi.com/1424-8220/24/8/2416)
+
 ### Authors: Thomas Decorte, Steven Mortier, Jonas J. Lembrechts, Filip J. R. Meysman, Steven Latré, Erik Mannens, and Tim Verdonck
 
 ## Abstract
@@ -20,8 +22,6 @@ different proportions of missing data (ranging from 10% to 50%), as well as a re
 scenario. Techniques leveraging the spatial features of the data tend to outperform the time-based
 methods, with matrix completion techniques providing the best performance. Our results hence
 provide a tool to maximize the benefit from costly, large-scale environmental monitoring efforts.
-
-For more information see: INSERT PAPER URL
 
 ## Code
 
